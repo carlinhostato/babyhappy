@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil - BabyHappy</title>
+    <link rel="stylesheet" href="../assets/css/babysitter_profile_edit.css">
+    <link rel="stylesheet" href="../assets/css/parent_dashboard.css">
+</head>
+<body>
+    
+    <div class="dashboard-header">
+        <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+        
+        <div class="search-container">
+            <form id="search-form" class="search-form">
+                <span class="search-icon">🔍</span> 
+                <input type="text" name="query" placeholder="Search by location or name" class="search-input">
+            </form>
+        </div>
+    </div>
+    
+    <div class="profile-container">
+        <h1>Editar Perfil</h1>
+
+        <p id="feedback-message" style="display: none;"></p>
+
+        <form id="profile-edit-form" method="POST" enctype="multipart/form-data">
+            
+            <div class="profile-photo-area">
+                <img id="profile-photo-display" src="" alt="Foto de Perfil">
+                
+                <div class="form-group" style="margin-top: 10px;">
+                    <label for="new_photo">Alterar Foto:</label>
+                    <input type="file" id="new_photo" name="new_photo" accept="image/*">
+                </div>
+            </div>
+
+            <input type="hidden" name="user_id" id="user-id-field" value="">
+
+            <div class="form-group">
+                <label for="nome_completo">Nome Completo</label>
+                <input type="text" id="nome_completo" name="nome_completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+                    <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="text" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+            <label for="localizacao">Localização</label>
+            <input type="text" id="localizacao" name="localizacao">
+        </div>
+            <hr>
+            <hr>
+
+<div id="babysitter-fields" style="display: none;">
+    <h2>Detalhes da Babysitter</h2>
+
+    <div class="form-group">
+        <label for="bio">Bio / Sobre Mim</label>
+        <textarea id="bio" name="bio" rows="4"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="experiencia">Anos de Experiência</label>
+        <input type="number" id="experiencia" name="experiencia" min="0" step="1">
+    </div>
+
+    <div class="form-group">
+        <label for="disponibilidade">Disponibilidade (Ex: Fins de semana, Noites)</label>
+        <input type="text" id="disponibilidade" name="disponibilidade">
+    </div>
+
+    <div class="form-group">
+        <label for="proximidade">Proximidade Máxima (km)</label>
+        <input type="number" id="proximidade" name="proximidade" min="1" step="1">
+    </div>
+</div>
+<button type="submit" class="btn-submit">Guardar Alterações</button>
+            <p style="text-align: center;">🔒 Alterar Password</p>
+
+            <div class="form-group">
+                <label for="password">Nova Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirmar Nova Password</label>
+                <input type="password" id="confirm_password" name="confirm_password">
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar Alterações</button>
+        </form>
+    </div>
+
+    <div class="bottom-menu" id="bottom-menu">
+        <a href="../pages/search_sitter.html" class="nav-link" data-section="pesquisa"><span>🏠</span>Pesquisa</a>
+        <a href="../pages/parent_bookings.html" class="nav-link" data-section="reservas"><span>📅</span>Reservas</a>
+        <a href="../pages/payments_view.html" class="nav-link" data-section="pagamentos"><span>💳</span>Pagamentos</a>
+        <a href="../pages/chat_dashboard.html" class="nav-link" data-section="chat"><span>💬</span>Chat<span id="chat-notification-dot"></span></a>
+        <a href="../pages/profile_edit.html" class="nav-link active" data-section="perfil"><span>👤</span>Perfil</a> 
+        
+        <a href="#" id="logout-link" class="logout-btn"><span>➡️</span>Sair</a>
+    </div>
+    <script src="../assets/js/logout.js"></script>
+    <script src="../assets/js/profile_edit.js"></script> 
+</body>
+</html>

@@ -1,0 +1,71 @@
+/* dashboard-base.css */
+.main-content { 
+    padding: 20px; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+.search-container {
+    width: 90%; max-width: 600px; margin: 0 auto; background-color: white;
+    border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* ... (Todo o restante código da Seção 3, como .search-form, .list-item, .view-profile-btn, etc.) ... */
+.search-form { 
+    display: flex; align-items: center; padding: 8px 15px; 
+}
+.search-icon { 
+    color: #4a8cc7; margin-right: 10px; font-size: 1.2em; 
+}
+.search-input { 
+    flex-grow: 1; border: none; padding: 5px 0; font-size: 16px; outline: none; 
+}
+.list-item { 
+    display: flex; 
+    background: #fff; 
+    padding: 15px; 
+    border-radius: 15px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+    margin-bottom: 15px; 
+    align-items: center; 
+}
+.profile-pic { 
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 15px; 
+    background: #ccc; 
+}
+.info { 
+    flex-grow: 1; 
+}
+.name { 
+    font-weight: bold; 
+    font-size: 1.1em; 
+    color: #333; 
+}
+.rating { 
+    color: gold; 
+    margin: 5px 0; 
+    font-size: 1.1em; 
+}
+.rating span { 
+    color: #333; 
+    font-size: 0.9em; 
+    margin-left: 5px; 
+}
+.specialty { 
+    color: #666; 
+    font-size: 0.9em; 
+}
+.view-profile-btn { 
+    background: #4a8cc7; 
+    color: white; 
+    border: none; 
+    padding: 8px 12px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-size: 14px; 
+    margin-left: 10px; 
+    text-decoration: none;
+}

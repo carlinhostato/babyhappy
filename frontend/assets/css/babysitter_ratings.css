@@ -1,0 +1,72 @@
+/* assets/css/babysitter_ratings.css */
+
+.ratings-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+    padding-top: 25px;
+    background-color: #FEF6D9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating-summary {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    background-color: FEF6D9;
+}
+
+.rating-score {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffc107; /* Cor típica de estrela/avaliação */
+}
+
+.rating-card {
+    background-color: #FEF6D9;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.rating-card .rating-score {
+    font-size: 1.5rem;
+    color: #ffc107;
+}
+
+.rating-star {
+    font-size: 1.5rem;
+    color: #ffc107; /* Estrela Cheia */
+}
+
+.rating-info {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 10px;
+    border-top: 1px dashed #e9ecef;
+    padding-top: 5px;
+}
+
+.message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.message.loading {
+    background-color: #e0f7fa;
+    color: #00796b;
+}
+
+.message.error {
+    background-color: #ffebee;
+    color: #c62828;
+}

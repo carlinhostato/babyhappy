@@ -1,0 +1,213 @@
+/* ../assets/css/payments_view.css */
+
+.payments-wrapper { 
+    max-width: 100%; 
+    padding: 10px; 
+}
+.payments-wrapper h1 { 
+    font-size: 1.3em; 
+    margin: 10px 0; 
+    text-align: center; 
+}
+.payments-wrapper h2 { 
+    font-size: 1.1em; 
+    margin: 15px 0 10px; 
+}
+
+/* Saldo Display (Cor azul do topo) */
+.balance-display {
+    background: linear-gradient(135deg, #4a8cc7 0%, #357ab8 100%);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(74, 140, 199, 0.3);
+    font-size: 0.95em;
+}
+
+.balance-display b { 
+    font-size: 1.3em; 
+    display: block; 
+    margin-top: 5px; 
+}
+
+/* Formulário de Carregamento */
+.compact-form { 
+    background: white; 
+    padding: 15px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+    margin-bottom: 20px; 
+}
+.compact-form .form-group { 
+    margin-bottom: 12px; 
+}
+.compact-form label { 
+    font-size: 0.85em; 
+    font-weight: 600; 
+    margin-bottom: 5px; 
+    display: block; 
+    color: #333; 
+}
+.compact-form input, .compact-form select, .compact-form textarea { 
+    width: 100%; 
+    padding: 8px 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    font-size: 0.9em;
+    box-sizing: border-box;
+}
+.compact-form .btn-submit { 
+    margin-top: 10px; 
+    padding: 10px; 
+    font-size: 0.95em;
+    background: linear-gradient(135deg, #4a8cc7 0%, #357ab8 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s;
+}
+.compact-form .btn-submit:hover { 
+    transform: translateY(-2px); 
+}
+
+/* Tabela de Histórico */
+.payments-table-wrapper { 
+    overflow-x: auto; 
+    margin-top: 15px; 
+}
+.payments-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    font-size: 0.75em;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.payments-table thead { 
+    background: #4a8cc7; 
+    color: white; 
+}
+.payments-table th { 
+    padding: 8px 5px; 
+    text-align: left; 
+    font-weight: 600;
+    font-size: 0.85em;
+}
+.payments-table td { 
+    padding: 8px 5px; 
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+.payments-table tr:last-child td { 
+    border-bottom: none; 
+}
+.payments-table tr:hover { 
+    background-color: #f8f9fa; 
+}
+
+/* Badges e Cores */
+.type-badge { 
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 10px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+.type-badge.load { 
+    background-color: #d4edda; 
+    color: #155724; 
+}
+.type-badge.payment { 
+    background-color: #f8d7da; 
+    color: #721c24; 
+}
+
+.amount-positive { 
+    color: #28a745; 
+    font-weight: bold; 
+}
+.amount-negative { 
+    color: #dc3545; 
+    font-weight: bold; 
+}
+
+.empty-state { 
+    text-align: center; 
+    padding: 30px 20px; 
+    color: #999; 
+    font-size: 0.9em;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Mensagens de Feedback */
+.message { 
+    padding: 10px; 
+    border-radius: 8px; 
+    margin-bottom: 15px; 
+    font-weight: 600;
+}
+.message.success { 
+    background-color: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb; 
+}
+.message.error { 
+    background-color: #f8d7da; 
+    color: #721c24; 
+    border: 1px solid #f5c6cb; 
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .payments-table th:nth-child(3),
+    .payments-table td:nth-child(3) { 
+        display: none; 
+    }
+    .payments-table { 
+        font-size: 0.7em; 
+    }
+    .payments-table th, .payments-table td { 
+        padding: 6px 3px; 
+    }
+}
+
+/* Modal styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+.modal-overlay.active { display: flex; }
+.modal-content { background: white; padding: 30px; border-radius: 15px; max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto; position: relative; animation: slideUp 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid #f0f0f0; }
+.modal-header h2 { margin: 0; color: #333; font-size: 1.5em; }
+.modal-close { background: none; border: none; font-size: 28px; cursor: pointer; color: #999; transition: color 0.2s; padding: 0; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; }
+.modal-close:hover { color: #e74c3c; }
+
+.balance-actions { display: flex; gap: 10px; margin-top: 10px; }
+.btn-action { flex: 1; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 0.95em; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-deposit { background: linear-gradient(135deg, #27ae60, #229954); color: white; }
+.btn-deposit:hover { background: linear-gradient(135deg, #229954, #1e8449); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); }
+.btn-withdraw { background: linear-gradient(135deg, #3498db, #2980b9); color: white; }
+.btn-withdraw:hover { background: linear-gradient(135deg, #2980b9, #21618c); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); }
+.withdrawal-info { background: #e8f4f8; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #3498db; }
+.available-balance { background: #fff3cd; padding: 12px; border-radius: 8px; margin-bottom: 15px; text-align: center; border: 2px solid #ffc107; }
+.available-balance strong { color: #f39c12; font-size: 1.3em; }

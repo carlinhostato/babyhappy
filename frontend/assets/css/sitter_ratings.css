@@ -1,0 +1,124 @@
+/* sitter_ratings.css - Estilos personalizados */
+
+/* Tipografia e Fundo (Se necessário, caso não use Tailwind) */
+body {
+    font-family: 'Poppins', sans-serif; 
+    background-color: #f3f4f6; /* cinza claro, para o fundo */
+}
+
+/* Card - Estilo de caixa comum */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilos para Mensagens de Feedback */
+.message-box {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.message-box.success {
+    background-color: #d1fae5; /* green-100 */
+    color: #065f46; /* green-800 */
+    border: 1px solid #a7f3d0; /* green-200 */
+}
+
+.message-box.error {
+    background-color: #fee2e2; /* red-100 */
+    color: #991b1b; /* red-800 */
+    border: 1px solid #fecaca; /* red-300 */
+}
+
+/* Estilo dos Cartões de Avaliação */
+.rating-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb; /* gray-200 */
+    transition: all 0.2s ease-in-out;
+}
+
+/* Estilo especial para a avaliação do próprio utilizador */
+.user-rating {
+    background-color: #eff6ff; /* blue-50 */
+    border-left: 4px solid #3b82f6; /* blue-500 */
+}
+
+/* Estilos para botões de Ação na avaliação */
+.btn-edit {
+    background: none;
+    border: none;
+    color: #3b82f6; /* blue-500 */
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn-edit:hover {
+    background-color: #eff6ff;
+}
+
+.btn-delete {
+    background: none;
+    border: none;
+    color: #dc2626; /* red-600 */
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn-delete:hover {
+    background-color: #fee2e2;
+}
+
+
+/* Estilos dos Botões de Ação (Adaptado do seu código anterior) */
+.button-primary {
+    background-color: #4a8cc7; /* Cor Primária */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+    background-color: #3b76b2;
+}
+
+.button-secondary {
+    background-color: #e5e7eb; /* Cor Secundária (Cinza) */
+    color: #374151; /* gray-700 */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button-secondary:hover {
+    background-color: #d1d5db;
+}
+
+/* Otimização de Scroll para a lista de avaliações */
+/* Note: O max-height e overflow-y estão no HTML, mas este estilo pode ajudar no padding */
+#ratings-list::-webkit-scrollbar {
+    width: 6px;
+}
+#ratings-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+#ratings-list::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}

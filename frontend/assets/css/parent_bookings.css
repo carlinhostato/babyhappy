@@ -1,0 +1,225 @@
+/* =======================================================
+   1. ESTILOS GLOBAIS DA PÁGINA E FUNDO
+      - Correção crítica de Scroll e Cores de Fundo -
+   ======================================================= */
+
+body { 
+    /* Font family - (Mantida 'Poppins' do seu último input) */
+    font-family: 'Poppins', sans-serif; 
+    
+    /* Gradiente suave da imagem (Azul claro -> Branco/Azul claro) */
+    background: linear-gradient(180deg, #b2e1f9 ,#fef6d9); 
+    
+    margin: 0; 
+    
+    /* Espaço no fundo para o menu fixo */
+    padding-bottom: 70px; 
+    
+    /* Espaço no topo para o header fixo (Ajustado) */
+    padding-top: 120px;
+    
+    /* ESSENCIAL: Garante que padding e margens são contados dentro da largura/altura total */
+    box-sizing: border-box;
+    
+    /* Importante para o scroll, garantir que não há limite de altura */
+    /* min-height: 100vh; (REMOVIDO) */
+}
+
+/* =======================================================
+   2. ESTILOS DO HEADER (Topo e Logo)
+      - Para fazer o Header "flutuar" no topo -
+   ======================================================= */
+
+.dashboard-header { 
+    /* FIXO: Permite que o resto da página faça scroll por baixo */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    
+    /* Gradiente do Header (Cores claras da imagem) */
+    background: linear-gradient(180deg, #b2e1f9 0%, #fef6d9 100%); 
+    
+    z-index: 500; 
+    padding: 10px 0 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+    /* Altura definida para o padding-top do body funcionar corretamente */
+    height: 110px; 
+    
+    /* Curvas na parte inferior do header fixo */
+}
+
+.logo-img { 
+    width: 80px; 
+    margin: 0 auto; 
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+/* Mensagem de boas-vindas */
+.welcome-message {
+    color: #3b76b2; 
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/* =======================================================
+   3. CONTAINER PRINCIPAL E TÍTULO
+   ======================================================= */
+
+.reservas-container {
+    background-color: transparent; 
+    padding: 0 15px 20px 15px; 
+    /* Correção de scroll: removida margem negativa e overflow-y */
+}
+
+/* Título "Minhas Reservas" */
+.reservas-container h2 {
+    color: #3b76b2; 
+    font-size: 2.1em; 
+    padding-top: -25px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding-left: 0;
+    
+}
+
+.bookings-list-grid p {
+    text-align: center;
+}
+
+/* =======================================================
+   4. ESTILOS DOS CARTÕES DE RESERVA (Gerado pelo JS)
+      - Classes alinhadas com o seu JavaScript (booking-card, sitter-thumb) -
+   ======================================================= */
+
+.bookings-list-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Cartão de Reserva Principal (Classe usada no JS) */
+.booking-card {
+    background-color: white; 
+    border: none;
+    border-radius: 15px; 
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+}
+
+/* Informação do Sitter (Foto + Detalhes) */
+.booking-sitter-info {
+    display: flex;
+    align-items: flex-start; 
+    margin-bottom: 15px;
+}
+
+/* Foto do Sitter (Classe usada no JS) */
+.sitter-thumb {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+    background-color: #f0f8ff; 
+}
+
+/* Detalhes da Reserva (Classe usada no JS) */
+.booking-details p {
+    margin: 5px 0; 
+    font-size: 1em;
+    color: #555;
+    line-height: 1.4;
+}
+
+.booking-details strong {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Título 'Reserva com Nome do Sitter' */
+.booking-header h4 {
+    margin: 0;
+    color: #3b76b2; 
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Status Badge */
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Cores dos Status */
+.status-badge.confirmed, .status-badge.completed { background-color: #5cb85c; }
+.status-badge.requested { background-color: #f0ad4e; }
+.status-badge.rejected, .status-badge.cancelled { background-color: #d9534f; }
+
+/* Ações (Botão Cancelar/Pagar) */
+.booking-actions {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 15px;
+    gap: 8px;
+}
+
+.btn-cancelar {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+.btn-pagar {
+    background-color: #4a8cc7 !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-size: 0.8em !important;
+}
+
+/* =======================================================
+   5. MENU DE NAVEGAÇÃO INFERIOR (FOOTER FIXO)
+   ======================================================= */
+
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.nav-link, #logout-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #f44336;
+    font-size: 0.75em;
+    transition: color 0.2s;
+}
+
+/* Estilo para links ativos ou hover */
+.bottom-menu .nav-link[data-section="reservas"] {
+    font-weight: bold; 
+    color: #4a8cc7;
+}
+

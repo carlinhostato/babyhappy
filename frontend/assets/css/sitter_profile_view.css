@@ -1,0 +1,109 @@
+/* Ficheiro: /public/assets/css/sitter_profile_view.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinhar ao topo para evitar sobreposição */
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Área de Feedback/Carregamento */
+#feedback-area {
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #3b76b2;
+    font-weight: bold;
+}
+
+/* Cabeçalho do Sitter */
+.sitter-header {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.sitter-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #3b76b2; /* Cor primária */
+}
+
+.sitter-header h1 {
+    font-size: 2em;
+    color: #333;
+    margin: 5px 0 10px 0;
+}
+
+.sitter-header p {
+    color: #666;
+    font-size: 1.1em;
+    margin-top: 0;
+}
+
+/* Rating */
+.rating-full {
+    font-size: 1.5em;
+    color: #ffc107; /* Cor da estrela (dourado) */
+    margin-top: 10px;
+}
+
+/* Detalhes */
+.detail-box {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 5px solid #a8c1e8; /* Cor secundária */
+}
+
+.detail-box h3 {
+    color: #3b76b2;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.detail-box p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.detail-box strong {
+    color: #555;
+    font-weight: bold;
+}
+
+/* Botão de Agendamento */
+.book-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745; /* Verde para ação principal */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #1e7e34;
+}

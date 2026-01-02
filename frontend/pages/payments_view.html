@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">💳 Pagamentos | BabyHappy</title>
+    <link rel="stylesheet" href="../assets/css/payments_view.css">
+    <link rel="stylesheet" href="../assets/css/parent_dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-header">
+    <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+    <div class="search-container">
+        <form id="search-form" class="search-form">
+            <span class="search-icon">🔍</span> 
+            <input type="text" name="query" placeholder="Pesquisar..." class="search-input">
+        </form>
+    </div>
+</div>
+
+<div class="payments-wrapper">
+    <h1 id="payment-title">💳 Pagamentos</h1>
+
+    <div id="feedback-message-container" aria-live="polite"></div>
+
+    <div class="balance-display">
+        Saldo Disponível
+        <b id="current-balance">€0,00</b>
+        
+        <div class="balance-actions">
+            <button class="btn-action btn-deposit" id="open-deposit-btn" aria-controls="deposit-section" aria-expanded="false">
+                <span>💰</span> Carregar Saldo
+            </button>
+            <!-- Botão de Levantamento removido -->
+        </div>
+    </div>
+
+    <div id="reserva-info" style="display:none; background: #e7f3ff; padding: 10px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #b3d7ff;">
+        📌 Pagamento referente à Reserva: <strong id="reserva-id">#0</strong>
+    </div>
+
+    <!-- Formulário de Depósito (simulação de MB Way e Cartão) -->
+    <div id="deposit-section" style="display:none;">
+        <h2>💰 Carregar Saldo (Simulação)</h2>
+        <form id="paymentForm" class="compact-form">
+            <input type="hidden" id="booking_id" name="booking_id">
+            
+            <div class="form-group">
+                <label for="amount">💶 Valor</label>
+                <input type="number" step="0.01" id="amount" name="amount" required placeholder="Ex: 50.00" min="1" max="10000">
+            </div>
+
+            <div class="form-group">
+                <label for="method">💳 Método de Pagamento</label>
+                <select name="method" id="method" required>
+                    <option value="">-- Escolha o método --</option>
+                    <option value="MB Way">📱 MB Way</option>
+                    <option value="Cartão de Crédito">💳 Cartão de Crédito</option>
+                </select>
+            </div>
+
+            <div id="mbway-fields" class="payment-fields" style="display:none;">
+                <div class="form-group">
+                    <label for="mbway_number">📱 Número de Telemóvel (MB Way)</label>
+                    <input type="text" id="mbway_number" name="mbway_number" placeholder="912345678" pattern="\d{9}" maxlength="9">
+                </div>
+            </div>
+
+            <div id="card-fields" class="payment-fields" style="display:none;">
+                <div class="form-group">
+                    <label for="card_number">💳 Número do Cartão</label>
+                    <input type="text" id="card_number" name="card_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <div class="form-group" style="flex:1;">
+                        <label for="card_expiry">📅 Validade (MM/AA)</label>
+                        <input type="text" id="card_expiry" name="card_expiry" placeholder="MM/AA" maxlength="5">
+                    </div>
+                    <div class="form-group" style="flex:1;">
+                        <label for="card_cvv">🔒 CVV</label>
+                        <input type="password" id="card_cvv" name="card_cvv" placeholder="123" maxlength="4">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="load-submit-btn">✅ Efetuar Pagamento (Simulado)</button>
+        </form>
+    </div>
+
+    <h2>📊 Histórico de Movimentos</h2>
+    <div id="history-container">
+        <p style="text-align:center; color: #666;">A carregar movimentos...</p>
+    </div>
+</div>
+
+<div class="bottom-menu" id="bottom-menu">
+    <a href="search_sitter.html" class="nav-link"><span>🏠</span>Pesquisa</a>
+    <a href="parent_bookings.html" class="nav-link"><span>📅</span>Reservas</a>
+    <a href="payments_view.html" class="nav-link active"><span>💳</span>Pagamentos</a>
+    <a href="chat_dashboard.html" class="nav-link"><span>💬</span>Chat</a>
+    <a href="profile_edit.html" class="nav-link"><span>👤</span>Perfil</a>
+    <a href="#" id="logout-link" class="logout-btn"><span>➡️</span>Sair</a>
+</div>
+
+<script src="../assets/js/logout.js"></script>
+<script src="../assets/js/payments_parents.js"></script>
+</body>
+</html>

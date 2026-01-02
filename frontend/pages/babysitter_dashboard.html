@@ -1,0 +1,66 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="page-title">Dashboard Babysitter | BabyHappy</title>
+
+    </head>
+
+    <div class="dashboard-header">
+        <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+        <h3 id="welcome-message">Bem-vindo(a), Carregando...</h3>
+    </div>
+
+    <div class="main-content">
+        <div id="section-loading" style="text-align: center; padding-top: 150px;">
+            A carregar dashboard...
+        </div>
+
+        <div id="section-reservas" class="dashboard-section" style="display:none;">
+            <h2>📅 Suas Reservas</h2>
+            <div id="bookings-list"></div>
+        </div>
+        
+        <div id="section-chat" class="dashboard-section" style="display:none;">
+            <h2>💬 Chat</h2>
+            </div>
+        
+        <div id="section-pagamentos" class="dashboard-section" style="display:none;">
+            <h2>💳 Pagamentos Recebidos</h2>
+        </div>
+        
+        <div id="section-ratings" class="dashboard-section" style="display:none;">
+            <h2>⭐ Suas Avaliações</h2>
+        </div>
+
+        <div id="section-perfil" class="dashboard-section" style="display:none;">
+            <h2>👤 Editar Perfil</h2>
+            <p id="profile-message"></p>
+            
+            <form id="profile-form" action="javascript:void(0);" enctype="multipart/form-data">
+                <div id="profile-details-sitter">
+                    </div>
+                
+                <hr>
+                <p style="text-align: center;">🔒Alterar Password</p>
+                <div class="form-group"><label for="password">Nova Password</label><input type="password" id="password" name="password"></div>
+                <div class="form-group"><label for="confirm_password">Confirmar Nova Password</label><input type="password" id="confirm_password" name="confirm_password"></div>
+                <button type="submit" class="btn-submit">Guardar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+  <div class="bottom-menu" id="bottom-menu">
+        <a href="../pages/babysitter_bookings.html" class="nav-link active-section" data-section="reservas"><span>📅</span>Reservas</a>
+        <a href="../pages/chat_babysitter.html" class="nav-link" data-section="chat"><span>💬</span>Chat<span id="chat-notification-dot"></span></a>
+        <a href="../pages/babysitter_payments.html" class="nav-link" data-section="pagamentos"><span>💳</span>Pagamentos</a>
+        <a href="../pages/babysitter_ratings.html" class="nav-link" data-section="ratings"><span>⭐</span>Avaliações</a>
+        <a href="../pages/babysitter_profile_edit.html" class="nav-link" data-section="perfil"><span>👤</span>Perfil</a>
+        
+        <a href="#" id="logout-link" class="logout-btn"><span>➡️</span>Sair</a>
+    </div>
+    <script src="../assets/js/logout.js"></script>>
+    <script src="../js/dashboard_sitter.js"></script> 
+    </body>
+    </html>

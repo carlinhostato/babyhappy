@@ -1,0 +1,87 @@
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to bottom, #b2e1f9 100%, #fef6d9 50%);
+        margin: 0;
+        padding-bottom: 70px;
+        padding-top: 150px;
+    }
+
+    .dashboard-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to bottom, #fef6d9 0%, #b2e1f9 100%);
+        z-index: 500;
+        padding: 10px 0 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+
+    .main-content-container h2 {
+        text-align: left;
+        padding-left: 0.5rem;
+        padding-top: 10px;
+        margin-bottom: 20px;
+        color: #4a8cc7;
+    }
+
+    .no-bookings {
+        text-align: left;
+        padding-left: 0.5rem;
+    }
+
+    .reservas-container p {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-left: 0.5rem;
+    }
+
+    .reserva-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .reserva-card p {
+        margin: 5px 0;
+    }
+
+    .btn-aprovar,
+    .btn-recusar {
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .btn-aprovar {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .btn-recusar {
+        background-color: #f44336;
+        color: white;
+    }
+
+    .status {
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    .status.pendente {
+        color: #f39c12;
+    }
+
+    .status.aprovada {
+        color: #2ecc71;
+    }
+
+    .status.recusada {
+        color: #e74c3c;
+    }

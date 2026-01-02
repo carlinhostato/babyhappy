@@ -1,0 +1,39 @@
+/* ../assets/css/chat-babysitter.css - Estilos Específicos da Babysitter */
+
+/* Cores da Conversa Ativa */
+.conversation-item.active-conv {
+    background-color: #e0f0ff; /* Azul claro */
+    border-left: 5px solid #4a8cc7;
+}
+
+/* Header do Chat */
+.chat-header span {
+    color: #4a8cc7; /* Nome do Parceiro Azul */
+}
+
+#back-to-list-btn {
+    color: #4a8cc7; /* Seta Voltar Azul */
+}
+
+/* Minhas Mensagens (Babysitter) */
+.my-message {
+    background-color: #4a8cc7; /* Azul Principal */
+}
+
+.my-message .message-time {
+    color: #e0f0ff;
+}
+
+/* Mensagens do Parceiro (Parent) */
+.partner-message {
+    background-color: #e2e2e2; /* Cinza claro */
+}
+
+/* Área de Input */
+.chat-input-area button {
+    background-color: #4a8cc7; /* Botão Enviar Azul */
+}
+
+.chat-input-area button:hover {
+    background-color: #3a75a8;
+}

@@ -1,0 +1,152 @@
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #fef6d9 0%, #b2e1f9 0%);
+            margin: 0;
+            padding-bottom: 70px;
+            padding-top: 150px;
+        }
+
+        .dashboard-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to bottom, #fef6d9 0%, #b2e1f9 100%);
+            z-index: 500;
+            padding: 10px 0 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .logo-img {
+            width: 80px;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Menu fixo no rodapé */
+        .bottom-menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 60px;
+            z-index: 1000;
+        }
+
+        .bottom-menu a {
+            text-decoration: none;
+            color: #777;
+            padding: 5px;
+            text-align: center;
+            font-size: 0.8em;
+            transition: color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .bottom-menu a:hover,
+        .bottom-menu .active-section {
+            color: #4a8cc7;
+        }
+
+        .bottom-menu a span {
+            font-size: 1.5em;
+            margin-bottom: 3px;
+        }
+
+        .bottom-menu a.logout-btn {
+            color: #f44336;
+        }
+
+        .main-content {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Notification Dot */
+        #chat-notification-dot {
+            position: absolute;
+            top: 5px;
+            right: 25%;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            display: none;
+        }
+
+        /* Layout das reservas */
+        .reservas-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .reserva-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .reserva-card p {
+            margin: 5px 0;
+        }
+
+        /* Estilo para a aba de pagamentos */
+        .pagamentos-container h2 {
+            text-align: center;
+            color: #4a8cc7;
+        }
+        /* Garantir que o cabeçalho é compacto em ecrãs pequenos */
+@media (max-width: 767px) {
+    .dashboard-header {
+        /* Reduzir padding para diminuir a altura do cabeçalho */
+        padding: 10px 15px; 
+    }
+    
+    /* Garantir que não está a empurrar o chat para baixo */
+    .dashboard-header {
+        margin-bottom: 5px; 
+    }
+
+    /* Regras para o menu inferior (Se não tiver bottom-menu.css) */
+    .bottom-menu {
+        /* Garante que o menu inferior fica bem formatado e visível */
+        position: fixed; 
+        bottom: 0;
+        left: 0;
+        width: 100%; 
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 8px 0; 
+        background-color: #ffffff; 
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); 
+        z-index: 1000; 
+        height: 60px;
+    }
+
+    .bottom-menu a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.75em;
+        color: #666; 
+    }
+
+    .bottom-menu span {
+        font-size: 1.5em; 
+        margin-bottom: 3px;
+    }
+}

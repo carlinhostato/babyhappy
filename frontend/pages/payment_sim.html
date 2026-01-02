@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Pagamento de Reserva</title>
+    <link rel="stylesheet" href="payment_sim.css">
+</head>
+<body>
+
+    <main class="container">
+        <h2>Simulação de Pagamento</h2>
+        <p>A pagar a reserva <strong id="display-booking-id">#101</strong>.</p>
+        <p>Valor total: <strong id="display-amount">€ 50.00</strong></p>
+
+        <form id="payment-form">
+            <input type="hidden" name="action" value="simulate_payment">
+            <input type="hidden" name="booking_id" id="input-booking-id" value="101">
+            <input type="hidden" name="amount" id="input-amount" value="50.00">
+            
+            <div class="method-box">
+                <label>
+                    <input type="radio" name="payment_method" value="mbway" checked>
+                    MB Way (Simulação)
+                </label>
+            </div>
+            
+            <div class="method-box">
+                <label>
+                    <input type="radio" name="payment_method" value="card">
+                    Cartão de Crédito (Simulação)
+                </label>
+            </div>
+
+            <button type="submit" id="submit-btn">Processar Pagamento (Simular)</button>
+        </form>
+
+        <div id="feedback" class="message-area" style="display: none;"></div>
+    </main>
+
+    <script src="payment_sim.js"></script>
+</body>
+</html>

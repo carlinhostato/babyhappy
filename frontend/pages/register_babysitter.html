@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabbyHappy - Criar Conta</title>
+    <link rel="stylesheet" href="../assets/css/register.css">
+</head>
+<body>
+<div class="register-container">
+    <img src="../assets/images/babyhappylogo.png" alt="BabbyHappy Logo">
+    <h2>Criar Conta</h2>
+    
+    <p class="subtitle">Como <strong>babysitter</strong></p> 
+
+    <form id="registerForm"> 
+        <input type="hidden" name="role" value="babysitter">
+
+        <input type="text" id="nome_completo" name="nome_completo" required placeholder="Nome completo">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <input type="text" name="localizacao" placeholder="Localização (opcional)">
+        <button type="submit">Registar</button>
+    </form>
+    
+    <p id="message" style="margin-top: 15px; text-align: center;"></p>
+
+    <div class="login-link">
+        Já tem uma conta? <a href="../pages/login.html">Entrar</a>
+    </div>
+</div>
+
+<script src="../assets/js/register_babysitter.js"></script> 
+</body>
+</html>

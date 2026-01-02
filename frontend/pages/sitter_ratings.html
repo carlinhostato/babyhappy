@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Avaliações do Babysitter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/sitter_ratings.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<div class="dashboard-header">
+    <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+</div>
+<body class="min-h-screen">
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <a href="search_sitter.html"
+                        class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                        <span class="mr-2">←</span> Voltar para busca
+                    </a>
+                    <h1 class="text-2xl font-bold text-gray-800">⭐ Avaliações</h1>
+                </div>
+                <div class="text-sm text-gray-600 bg-blue-50 px-3 py-1 rounded-full" id="ratings-count-header">
+                    0 avaliações
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <div class="card p-6 mb-8 relative" id="sitter-info-container">
+            <div class="flex items-center space-x-4">
+                <img src="/babyhappy_v1/frontend/assets/images/default_profile.png" alt="Foto" id="sitter-photo"
+                    class="w-20 h-20 rounded-full object-cover border-2 border-blue-200 shadow-md">
+                <div class="flex-1">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-1" id="sitter-name">A carregar...</h2>
+                    <p class="text-blue-600 font-semibold text-lg" id="sitter-price">
+                        0,00 €/h
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="feedback-message-container">
+        </div>
+
+        <div id="edit-rating-form-container" class="hidden card p-6 mb-6 border-l-4 border-l-yellow-400">
+            <div class="flex items-center mb-4">
+                <span class="text-2xl mr-3">✏️</span>
+                <h3 class="text-xl font-bold text-gray-800">Editar sua Avaliação</h3>
+            </div>
+            <form id="edit-rating-form">
+                <input type="hidden" name="action" value="edit_rating">
+                <input type="hidden" name="rating_id" id="edit-rating-id">
+
+                <div class="mb-4">
+                    <label class="block font-medium mb-3 text-gray-700">Sua nota: <span
+                            class="text-red-500">*</span></label>
+                    <div class="flex gap-1 mb-3" id="edit-star-picker">
+                    </div>
+                    <input type="hidden" name="rating" id="edit-rating-input" required>
+                    <div class="text-green-600 text-sm font-medium bg-green-50 px-3 py-2 rounded-lg inline-block"
+                        id="edit-rating-display-box">
+                        ⭐ Nota selecionada: <span id="edit-rating-display" class="font-bold">0</span>/5
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="edit-comentario" class="block font-medium mb-2 text-gray-700">Comentário:</label>
+                    <textarea id="edit-comentario" name="comentario" rows="4"
+                        class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100 resize-none transition-all duration-200"
+                        placeholder="Partilhe a sua experiência..."></textarea>
+                </div>
+
+                <div class="flex space-x-3">
+                    <button type="submit" class="button-primary flex items-center">
+                        <span class="mr-2">✅</span> Atualizar Avaliação
+                    </button>
+                    <button type="button" id="cancel-edit-btn" class="button-secondary flex items-center">
+                        <span class="mr-2">❌</span> Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <div class="card p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <span class="mr-2">⭐</span> Adicionar Nova Avaliação
+                </h3>
+
+                <form id="add-rating-form">
+                    <input type="hidden" name="action" value="add_rating">
+
+                    <div class="mb-6">
+                        <label class="block font-medium mb-3 text-gray-700">Sua nota: <span
+                                class="text-red-500">*</span></label>
+                        <div class="flex gap-1 mb-3" id="simple-star-picker">
+                        </div>
+
+                        <input type="hidden" name="rating" id="add-rating-input" required>
+                        <div id="add-rating-display-box"
+                            class="text-green-600 text-sm font-medium bg-green-50 px-3 py-2 rounded-lg inline-block hidden">
+                            ⭐ Nota selecionada: <span id="add-rating-display" class="font-bold"></span>/5
+                        </div>
+                        <div id="add-rating-error"
+                            class="text-red-500 text-sm mt-2 bg-red-50 px-3 py-2 rounded-lg hidden">
+                            ❌ Por favor, selecione uma nota
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="add-comentario" class="block font-medium mb-2 text-gray-700">Comentário
+                            (opcional):</label>
+                        <textarea id="add-comentario" name="comentario" rows="4"
+                            class="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100 resize-none transition-all duration-200"
+                            placeholder="Partilhe a sua experiência..."></textarea>
+                    </div>
+
+                    <button type="submit" id="add-rating-submit-btn" class="w-full button-primary text-lg py-4">
+                        📝 Adicionar Avaliação
+                    </button>
+                </form>
+
+                <p class="text-sm text-gray-600 mt-4 text-center bg-blue-50 px-4 py-3 rounded-lg">
+                    💡 <strong>Pode adicionar quantas avaliações quiser!</strong> Cada experiência conta.
+                </p>
+            </div>
+
+            <div class="card p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-bold text-gray-800 flex items-center">
+                        <span class="mr-2">📋</span> Todas as Avaliações
+                    </h3>
+                    <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full"
+                        id="ratings-count-display">
+                        0 total
+                    </span>
+                </div>
+
+                <div id="ratings-list" class="space-y-4 max-h-[500px] overflow-y-auto pr-3">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../assets/js/sitter_ratings.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabbyHappy - Login</title>
+    <link rel="stylesheet" href="../assets/css/login.css">
+</head>
+<body>
+    <div class="register-container">
+        <img src="../assets/images/babyhappylogo.png" alt="BabbyHappy Logo">
+        <h2>Login</h2>
+
+        <div class="error" style="display: none;"></div>
+
+        <form id="login-form" onsubmit="return false;">
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Email" 
+                required
+                autocomplete="email"
+            >
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                placeholder="Senha" 
+                required
+                autocomplete="current-password"
+            >
+            <button type="button" id="login-btn">Entrar</button>
+        </form>
+
+        <div class="back-button">
+            <a href="choose_role.html" style="color: #4a8cc7; text-decoration: none;">
+                Voltar
+            </a>
+        </div>
+
+        <div class="login-link">
+            Não tem conta? <a href="register.html">Criar Conta</a>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // CONFIGURAÇÃO CORRIGIDA
+        // ========================================
+        
+        // 🚨 ATENÇÃO: 
+        // 1. O URL agora é apenas a BASE da API (sem o nome do ficheiro)
+        // 2. Você deve garantir que 'http://localhost/BABYHAPPY%20-%20VERSÃO%201/backend/api/auth'
+        // é o URL correto que aponta para a pasta onde está o seu ficheiro login.php de API.
+        const API_BASE_URL = 'http://localhost/babyhappy_v1/api/auth'; 
+
+        console.log('🚀 Script carregado!');
+
+        // ... (restante do código JS) ...
+
+        // ========================================
+        // ELEMENTOS DO DOM
+        // ========================================
+        const form = document.getElementById('login-form');
+        const errorDiv = document.querySelector('.error');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const loginBtn = document.getElementById('login-btn');
+
+        // ... (restante do código de verificação de autenticação e elementos DOM) ...
+
+        // ========================================
+        // EVENTO DE CLIQUE NO BOTÃO (Alteração no FETCH)
+        // ========================================
+        loginBtn.addEventListener('click', async () => {
+            console.log('🔘 Botão clicado!');
+            
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+
+            hideError();
+
+            if (!email || !password) {
+                showError('Por favor, preencha todos os campos');
+                return;
+            }
+
+            loginBtn.disabled = true;
+            loginBtn.textContent = 'Entrando...';
+
+            try {
+                // AQUI USAMOS A BASE CORRIGIDA + O NOME DO FICHEIRO
+                const endpointURL = `${API_BASE_URL}/login.php`;
+                console.log('🌐 Fazendo requisição para:', endpointURL);
+
+                const response = await fetch(endpointURL, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                console.log('📡 Resposta recebida. Status:', response.status);
+
+                const data = await response.json();
+                console.log('📦 Dados recebidos:', data);
+
+                if (!response.ok || data.success === false) { // Adicionando verificação de success: false no JSON
+                    throw new Error(data.message || 'Erro desconhecido ao fazer login');
+                }
+
+                // ... (restante do código de sucesso e redirecionamento) ...
+
+                localStorage.setItem('user', JSON.stringify(data.data));
+                showSuccess('Login realizado! Redirecionando...');
+
+                setTimeout(() => {
+                    redirectToDashboard(data.data.role);
+                }, 1500);
+
+            } catch (error) {
+                console.error('❌ Erro:', error);
+                showError(error.message);
+                
+                loginBtn.disabled = false;
+                loginBtn.textContent = 'Entrar';
+                
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        });
+
+        // ========================================
+        // FUNÇÕES AUXILIARES
+        // ========================================
+        function showError(message) {
+            console.log('🔴 Mostrar erro:', message);
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            errorDiv.style.color = '#d32f2f';
+            errorDiv.style.backgroundColor = '#ffebee';
+            errorDiv.style.padding = '12px';
+            errorDiv.style.borderRadius = '6px';
+            errorDiv.style.marginBottom = '15px';
+            errorDiv.style.border = '1px solid #ef5350';
+        }
+
+        function showSuccess(message) {
+            console.log('🟢 Mostrar sucesso:', message);
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            errorDiv.style.color = '#2e7d32';
+            errorDiv.style.backgroundColor = '#e8f5e9';
+            errorDiv.style.padding = '12px';
+            errorDiv.style.borderRadius = '6px';
+            errorDiv.style.marginBottom = '15px';
+            errorDiv.style.border = '1px solid #66bb6a';
+        }
+
+        function hideError() {
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+        }
+
+        function redirectToDashboard(role) {
+            console.log('🔄 Redirecionando para:', role);
+            
+            if (role.toLowerCase() === 'babysitter') {
+                window.location.href = 'babysitter_bookings.html';
+            } else if (role.toLowerCase() === 'parent') {
+                window.location.href = 'search_sitter.html';
+            } else {
+                window.location.href = 'choose_role.html';
+            }
+        }
+
+        console.log('✅ Script completamente carregado e pronto!');
+    </script>
+</body>
+</html>

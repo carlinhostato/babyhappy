@@ -1,0 +1,231 @@
+/* ========================================= */
+/* BASE STYLES & LAYOUT (Comum a ambos os dashboards) */
+/* ========================================= */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dbeaff; /* Fundo azul claro pastel */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-content-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 80px; /* Espaço para o menu de navegação fixo */
+}
+.pagamentos-container h2{
+    padding-top: 25px;
+}
+
+h2 {
+    text-align: center;
+    color: #4a8cc7; /* Azul do cabeçalho */
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.h3 {
+    text-align: center;
+    color: black; /* Azul do cabeçalho */
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+/* ========================================= */
+/* SECÇÃO DE SALDO / CABEÇALHO */
+/* ========================================= */
+.saldo-header, .saldo-disponivel-babysitter {
+    background-color: #4a8cc7; /* Azul forte */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.saldo-header p, .saldo-disponivel-babysitter p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.saldo-header .saldo-valor, .saldo-disponivel-babysitter .saldo-valor {
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+}
+
+/* ========================================= */
+/* CARTÕES DE AÇÃO (Adicionar Saldo / Solicitar Levantamento) */
+/* ========================================= */
+.action-card {
+    background-color: #f0f7ff; /* Azul muito claro */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cceeff;
+    margin-bottom: 30px;
+}
+
+.action-card h3 {
+    color: #4a8cc7;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* Input e Select Gerais */
+.form-group-payments {
+    margin-bottom: 15px;
+}
+
+.form-group-payments label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.action-card input[type="text"],
+.action-card input[type="number"],
+.action-card select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.2s;
+}
+
+.action-card input:focus,
+.action-card select:focus {
+    border-color: #4a8cc7;
+    outline: none;
+}
+
+/* Botões de Submissão */
+.btn-submit-payments {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Cor do botão de Adicionar Saldo (Pai) */
+.btn-adicionar-saldo {
+    background-color: #4a8cc7;
+    color: white;
+}
+.btn-adicionar-saldo:hover {
+    background-color: #3870a0;
+}
+
+/* Cor do botão de Solicitar Levantamento (Babysitter) */
+.btn-solicitar-levantamento {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+.btn-solicitar-levantamento:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.btn-solicitar-levantamento:disabled {
+    background-color: #90c79e; /* Verde mais claro quando desativado */
+    cursor: not-allowed;
+}
+
+/* ========================================= */
+/* HISTÓRICO DE MOVIMENTOS / RECEBIMENTOS */
+/* ========================================= */
+.historico-section {
+    margin-top: 30px;
+}
+
+.historico-section h3 {
+    color: #4a8cc7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.historico-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.historico-tabela th {
+    background-color: #4a8cc7; /* Cabeçalho azul */
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.historico-tabela td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.historico-tabela tr:last-child td {
+    border-bottom: none;
+}
+
+/* Estilos Específicos para Valores */
+.value-positivo {
+    color: #28a745; /* Verde */
+    font-weight: bold;
+}
+.value-negativo {
+    color: #dc3545; /* Vermelho */
+    font-weight: bold;
+}
+
+/* Mensagens de Feedback */
+.feedback-message {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+.feedback-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.feedback-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* ========================================= */
+/* ESTILOS ESPECÍFICOS DO PROTÓTIPO */
+/* ========================================= */
+/* Utilizado na versão Pai (Adicionar Saldo) */
+.historico-movimentos th:nth-child(4),
+.historico-movimentos td:nth-child(4) {
+    text-align: right; /* Alinhar o Saldo Final à direita */
+}
+
+/* Utilizado na versão Babysitter (Recebimentos) */
+.historico-recebimentos th:nth-child(3),
+.historico-recebimentos td:nth-child(3) {
+    text-align: right; /* Alinhar Valor Recebido à direita */
+}
