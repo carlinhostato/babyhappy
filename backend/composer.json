@@ -1,0 +1,25 @@
+{
+    "name": "utilizador/babyhappy-app",
+    "description": "Aplicação de gestão de Babysitters (BabyHappy).",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "O Seu Nome",
+            "email": "seu.email@exemplo.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "BabyHappy\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
+}
