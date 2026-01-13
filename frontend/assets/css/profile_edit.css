@@ -1,0 +1,149 @@
+/* ../assets/css/profile_edit.css */
+
+.profile-container {
+    /* Centraliza e limita a largura do formulário em dispositivos maiores */
+    max-width: 700px;
+    margin: 20px auto 80px auto; /* 80px de margem inferior para não cobrir o menu fixo */
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #4a8cc7;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+hr {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+h2 {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Área de Mensagens de Feedback (Controlado pelo JS) */
+.message {
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Foto de Perfil */
+.profile-photo-area {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo-area img {
+    /* Estilo da imagem do perfil (Circular) */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f0f0f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Grupos de Formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group textarea {
+    /* Estilo uniforme para todos os inputs de texto/área */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="file"] {
+    padding: 5px 0;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    /* Efeito de foco (cor primária) */
+    border-color: #4a8cc7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 140, 199, 0.3);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Botão de Submissão */
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #4a8cc7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 30px;
+}
+
+.btn-submit:hover {
+    background-color: #3a75a8;
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+.btn-submit:disabled {
+    background-color: #a0c4e1;
+    cursor: not-allowed;
+}
+
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .profile-container {
+        /* Ocupa mais espaço em ecrãs pequenos */
+        margin: 15px 15px 80px 15px; 
+        padding: 20px;
+    }
+}

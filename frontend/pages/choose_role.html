@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BabbyHappy - Escolher Perfil</title>
+<link rel="stylesheet" href="../assets/css/choose_role.css">
+</head>
+<body>
+<div class="role-container">
+    <img src="../assets/images/babyhappylogo.png" alt="BabbyHappy Logo">
+    <h2>Escolha o seu perfil</h2>
+    <p>Como deseja usar o BabbyHappy?</p>
+    
+    <div class="role-selection">
+         <button type="button" class="btn-role" data-role="babysitter" data-redirect="register_babysitter.html">
+            Sou Babysitter
+        </button>
+        <button type="button" class="btn-role" data-role="parent" data-redirect="register.html">
+            Sou Utilizador
+        </button>
+    </div>
+    <p id="role-status" style="margin-top: 10px; color: #4CAF50;"></p>
+</div>
+<script src="../assets/js/choose_role.js"></script>
+</body>
+</html>

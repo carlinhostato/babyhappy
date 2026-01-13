@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✏️ Editar Perfil de Babysitter | BabyHappy</title>
+    <link rel="stylesheet" href="../assets/css/babysitter_profile_edit.css">
+    <link rel="stylesheet" href="../assets/css/babysitter_dashboard.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <div class="dashboard-header">
+        <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+        <h3 id="welcome-message-display">Bem-vindo(a), Carregando...</h3>
+    </div>
+
+    <div class="profile-edit-container">
+        <h2>✏️ Editar Perfil de Babysitter</h2>
+
+        <div id="feedback-container"></div>
+
+        <form action="edit_profile_process.php" method="POST" enctype="multipart/form-data" id="profile-edit-form">
+
+            <div class="profile-photo-container" style="display: flex; justify-content: center; margin-bottom: 20px;">
+                <img src="../assets/images/default-avatar.png" id="preview-image" alt="Foto de Perfil"
+                    style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #ddd;">
+            </div>
+
+            <div class="form-group">
+                <label for="new_photo">📷 Nova Foto de Perfil</label>
+                <input type="file" id="new_photo" name="new_photo" accept="image/jpeg,image/png,image/gif"
+                    onchange="previewPhoto(event)">
+                <p class="password-note">Formatos aceites: JPG, PNG, GIF</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section-title">📋 Dados Pessoais</div>
+
+            <div class="form-group">
+                <label for="nome_completo">Nome Completo <span class="required-field">*</span></label>
+                <input type="text" id="nome_completo" name="nome_completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email <span class="required-field">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="localizacao">Localização <span class="required-field">*</span></label>
+                <input type="text" id="localizacao" name="localizacao" placeholder="Ex: Porto, Vila Nova de Gaia"
+                    required>
+                <p class="password-note">Exemplo: Porto, Vila Nova de Gaia ou Braga</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section-title">👶 Informações Profissionais</div>
+
+            <div class="form-group">
+                <label for="preco_hora">Preço por Hora (€) <span class="required-field">*</span></label>
+                <input type="number" id="preco_hora" name="preco_hora" step="0.50" min="5" placeholder="Ex: 12.00"
+                    required>
+                <p class="password-note">Indique o valor que cobra por cada hora de serviço.</p>
+            </div>
+
+            <div class="form-group">
+                <label>Nível de Experiência <span class="required-field">*</span></label>
+                <div class="radio-group" id="radio-experiencia">
+                    <div class="radio-option">
+                        <input type="radio" id="exp_iniciante" name="experiencia" value="Iniciante" required>
+                        <label for="exp_iniciante">Iniciante<span class="radio-label-badge">Menos de 1
+                                ano</span></label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="exp_intermediaria" name="experiencia" value="Intermediária">
+                        <label for="exp_intermediaria">Intermediária<span class="radio-label-badge">1-3
+                                anos</span></label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="exp_avancada" name="experiencia" value="Avançada">
+                        <label for="exp_avancada">Avançada<span class="radio-label-badge">3-5 anos</span></label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="exp_especialista" name="experiencia" value="Especialista">
+                        <label for="exp_especialista">Especialista<span class="radio-label-badge">5+ anos</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="disponibilidade">Disponibilidade <span class="required-field">*</span></label>
+                <select id="disponibilidade" name="disponibilidade" required>
+                    <option value="">Selecione sua disponibilidade</option>
+                    <option value="Disponível">Disponível</option>
+                    <option value="Indisponível">Indisponível</option>
+                    <option value="Feriados">Feriados</option>
+                    <option value="Weekends">Weekends</option>
+                </select>
+            </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição Pessoal:</label>
+                    <textarea id="descricao" name="descricao" class="form-control" rows="4"
+                        placeholder="Conte um pouco sobre si e a sua experiência..."></textarea>
+                </div>
+            <div class="section-title">🔒 Alterar Password</div>
+
+            <div class="form-group">
+                <label for="password">Nova Password</label>
+                <input type="password" id="password" name="password" placeholder="Deixe em branco para manter a atual">
+                <p class="password-note">Mínimo de 6 caracteres</p>
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirmar Nova Password</label>
+                <input type="password" id="confirm_password" name="confirm_password"
+                    placeholder="Confirme a nova password">
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-btn">💾 Guardar Alterações</button>
+        </form>
+    </div>
+
+    <div class="bottom-menu" id="bottom-menu">
+        <a href="babysitter_bookings.html" class="nav-link"><span>📅</span>Reservas</a>
+        <a href="chat_babysitter.html" class="nav-link"><span>💬</span>Chat</a>
+        <a href="babysitter_payments.html" class="nav-link"><span>💳</span>Pagamentos</a>
+        <a href="babysitter_ratings.html" class="nav-link"><span>⭐</span>Avaliações</a>
+        <a href="babysitter_profile_edit.html" class="nav-link active-section"><span>👤</span>Perfil</a>
+        <a href="#" id="logout-link" class="logout-btn"><span>➡️</span>Sair</a>
+    </div>
+
+    <script src="../assets/js/logout.js"></script>
+    <script src="../assets/js/babysitter_profile_edit.js"></script>
+</body>
+
+</html>

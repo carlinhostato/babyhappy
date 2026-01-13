@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | BabyHappy</title>
+    <link rel="stylesheet" href="/public/assets/css/sitter_profile_view.css"> 
+</head>
+<body>
+    <div class="profile-card">
+        
+        <div id="feedback-area" style="text-align: center;"></div>
+
+        <div id="profile-content" style="display: none;">
+            
+            <div class="sitter-header">
+                <img src="" alt="Foto de Perfil" class="sitter-photo" id="sitter-photo">
+                <h1 id="sitter-name">Carregando...</h1>
+                <p>📍 <span id="sitter-location"></span></p>
+                <div class="rating-full" id="rating-stars">
+                    </div>
+            </div>
+
+            <div class="detail-box">
+                <h3>Sobre Mim</h3>
+                <p id="sitter-description">Carregando descrição...</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Detalhes Profissionais</h3>
+                <p><strong>Preço por Hora:</strong> <span id="sitter-price">0,00 €</span></p>
+                <p><strong>Experiência:</strong> <span id="sitter-experience">0</span> anos</p>
+            </div>
+
+            <a href="#" class="book-btn" id="book-button">Agendar Sessão</a>
+
+        </div>
+        
+        <p style="text-align: center; margin-top: 20px;"><a href="parent_dashboard.php">← Voltar à Pesquisa</a></p>
+    </div>
+
+    <script src="../assets/js/sitter_profile_view.js"></script> 
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💳 Pagamentos Babysitter | BabyHappy</title>
+    <link rel ="stylesheet" href="../assets/css/babysitter_dashboard.css">
+    <link rel="stylesheet" href="../assets/css/babysitter_payments.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="dashboard-header">
+        <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+        
+        <h3 id="welcome-message-display">Bem-vindo(a), A carregar...</h3>
+    </div> 
+    <div class="pagamentos-container">
+        <h2>💳 Pagamentos Recebidos</h2>
+
+        <div style="text-align:center; margin-bottom:20px;">
+            <div id="saldo-display" style="
+                display:inline-block;
+                background-color:#4a8cc7;
+                color:white;
+                padding:10px 25px;
+                border-radius:30px;
+                font-size:1.2em;
+                box-shadow:0 2px 5px rgba(0,0,0,0.2);
+            ">
+                💰 Saldo Disponível: <b id="current-balance">A carregar...</b>
+            </div>
+        </div>
+
+        <div id="withdrawal-section" style="
+            background:#fff;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom:30px;
+            border: 1px solid #ccc;
+        ">
+            <h3>Solicitar Levantamento</h3>
+            <p id="withdrawal-message" style="font-weight:bold;"></p>
+            
+            <form id="withdrawal-form">
+                <div style="margin-bottom: 15px; text-align: left;">
+                    <label for="withdrawal_amount" style="display: block; margin-bottom: 5px; font-weight: 600;">Montante a Levantar (€):</label>
+                    <input type="number" 
+                            id="withdrawal_amount" 
+                            name="amount" 
+                            min="1.00" 
+                            step="0.01" 
+                            required 
+                            value="0.00"
+                            style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    <small style="color:#777;">Máx: <span id="max-balance-hint">0.00 €</span></small>
+                </div>
+
+                <div style="margin-bottom: 20px; text-align: left;">
+                    <label for="withdrawal_method" style="display: block; margin-bottom: 5px; font-weight: 600;">Método de Levantamento:</label>
+                    <select id="withdrawal_method" name="method" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                        <option value="">-- Selecione o Método --</option>
+                        <option value="DEBIT_CARD">Cartão de Débito / Transferência (IBAN)</option>
+                        <option value="MBWAY">MB Way (Telemóvel)</option>
+                    </select>
+                </div>
+
+                <div id="details-input-container" style="margin-bottom: 20px; text-align: left; display: none;">
+                    <label for="details_value" id="details-label" style="display: block; margin-bottom: 5px; font-weight: 600;">Detalhes:</label>
+                    <input type="text" 
+                            id="details_value" 
+                            name="details_value" 
+                            maxlength="50"
+                            autocomplete="off"
+                            style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+                    <small id="details-hint" style="color:#777;"></small>
+                </div>
+
+                <button type="submit" id="submit-withdrawal" disabled 
+                    style="width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em;">
+                    Solicitar Levantamento
+                </button>
+            </form>
+        </div>
+
+        <h3>Histórico de Recebimentos</h3>
+        <div id="historico-loading" style="text-align: center;">A carregar histórico...</div>
+
+        <div id="historico-tabela">
+        </div>
+    </div>
+   <div class="bottom-menu" id="bottom-menu">
+        <a href="../pages/babysitter_bookings.html" class="nav-link active-section" data-section="reservas"><span>📅</span>Reservas</a>
+        <a href="../pages/chat_babysitter.html" class="nav-link" data-section="chat"><span>💬</span>Chat<span id="chat-notification-dot"></span></a>
+        <a href="../pages/babysitter_payments.html" class="nav-link" data-section="pagamentos"><span>💳</span>Pagamentos</a>
+        <a href="../pages/babysitter_ratings.html" class="nav-link" data-section="ratings"><span>⭐</span>Avaliações</a>
+        <a href="../pages/babysitter_profile_edit.html" class="nav-link" data-section="perfil"><span>👤</span>Perfil</a>
+        
+        <a href="#" id="logout-link" class="logout-btn"><span>➡️</span>Sair</a>
+    </div>
+    <script src="../assets/js/logout.js"></script>
+    <script src="../assets/js/babysitter_payments.js"></script> 
+    </body>
+</html>

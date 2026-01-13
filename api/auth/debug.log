@@ -1,0 +1,441 @@
+2025-12-11 14:44:44 - Script iniciado
+Método POST recebido
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../../backend/config/database.php
+Arquivo existe? NÃO
+2025-12-11 14:46:24 - Script iniciado
+Método: GET
+2025-12-11 14:49:27 - Script iniciado
+Método: GET
+2025-12-11 14:49:28 - Script iniciado
+Método: GET
+2025-12-11 14:49:28 - Script iniciado
+Método: GET
+2025-12-11 14:49:28 - Script iniciado
+Método: GET
+2025-12-11 14:49:41 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../../backend/config/database.php
+Arquivo existe? NÃO
+2025-12-11 14:52:38 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../../backend/config/database.php
+Arquivo existe? NÃO
+2025-12-11 14:55:58 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"lucia","email":"lucia@gmail.com","password":"lucia","localizacao":""}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => lucia
+    [email] => lucia@gmail.com
+    [password] => lucia
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 21
+Script finalizado com sucesso
+
+2025-12-11 14:59:06 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"rockstroice","email":"rockstroice@gmail.com","password":"rockstroice","localizacao":""}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => rockstroice
+    [email] => rockstroice@gmail.com
+    [password] => rockstroice
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 22
+Script finalizado com sucesso
+
+2025-12-11 15:00:02 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"rockstroice","email":"rockstroice@gmail.com","password":"rockstroice","localizacao":""}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => rockstroice
+    [email] => rockstroice@gmail.com
+    [password] => rockstroice
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 23
+Script finalizado com sucesso
+
+2025-12-11 15:06:19 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"dulce","email":"dulce@gmail.com","password":"dulce","localizacao":""}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => dulce
+    [email] => dulce@gmail.com
+    [password] => dulce
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 24
+Script finalizado com sucesso
+
+2025-12-11 19:15:53 - Script iniciado
+Método: GET
+2025-12-11 19:15:55 - Script iniciado
+Método: GET
+2025-12-11 19:16:29 - Script iniciado
+Método: GET
+2025-12-16 20:45:39 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"rockstroice","email":"rocks@gmail.com","password":"rocks","localizacao":""}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => rockstroice
+    [email] => rocks@gmail.com
+    [password] => rocks
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 25
+Script finalizado com sucesso
+
+2025-12-16 20:46:15 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"rocks","email":"rocks@gmail.com","password":"rocks","localizacao":""}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => rocks
+    [email] => rocks@gmail.com
+    [password] => rocks
+    [localizacao] => 
+)
+
+Validação OK
+Email já existe: rocks@gmail.com
+2025-12-16 20:46:24 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"rocks","email":"rocks10@gmail.com","password":"rocks","localizacao":""}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => rocks
+    [email] => rocks10@gmail.com
+    [password] => rocks
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 26
+Script finalizado com sucesso
+
+2025-12-17 12:26:44 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"Sara Correia","email":"saracorreia@babyhappy.pt","password":"saracorreia","localizacao":"Vila Nova de Gaia"}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => Sara Correia
+    [email] => saracorreia@babyhappy.pt
+    [password] => saracorreia
+    [localizacao] => Vila Nova de Gaia
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 27
+Script finalizado com sucesso
+
+2025-12-17 12:30:04 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"Sara Correira","email":"saracorreia@gmail.com","password":"saracorreia","localizacao":"Vila Nova de Gaia"}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => Sara Correira
+    [email] => saracorreia@gmail.com
+    [password] => saracorreia
+    [localizacao] => Vila Nova de Gaia
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 28
+Script finalizado com sucesso
+
+2025-12-29 21:49:10 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"kaka","email":"kaka@gmail.com","password":"kaka","localizacao":""}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => kaka
+    [email] => kaka@gmail.com
+    [password] => kaka
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 29
+Script finalizado com sucesso
+
+2026-01-08 14:36:51 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"José","email":"jose@gmail.com","password":"jose","localizacao":""}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => José
+    [email] => jose@gmail.com
+    [password] => jose
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 27
+Script finalizado com sucesso
+
+2026-01-08 14:37:16 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"Uriel","email":"uriel@gmail.com","password":"uriel","localizacao":"Espinho"}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => Uriel
+    [email] => uriel@gmail.com
+    [password] => uriel
+    [localizacao] => Espinho
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 28
+Script finalizado com sucesso
+
+2026-01-08 16:15:49 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"joao","email":"joao@gmail.com","password":"joao","localizacao":""}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => joao
+    [email] => joao@gmail.com
+    [password] => joao
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 25
+Script finalizado com sucesso
+
+2026-01-08 16:20:44 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"Carlos Vieira Tato","email":"carlinhosantoniotato@gmail.com","password":"carlos","localizacao":"Espinho"}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => Carlos Vieira Tato
+    [email] => carlinhosantoniotato@gmail.com
+    [password] => carlos
+    [localizacao] => Espinho
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 26
+Script finalizado com sucesso
+
+2026-01-08 16:21:11 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"Olavo","email":"olavo@gmail.com","password":"olavo","localizacao":"Porto"}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => Olavo
+    [email] => olavo@gmail.com
+    [password] => olavo
+    [localizacao] => Porto
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 27
+Script finalizado com sucesso
+
+2026-01-08 17:04:34 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"pedro","email":"pedro@gmail.com","password":"pedro","localizacao":""}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => pedro
+    [email] => pedro@gmail.com
+    [password] => pedro
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 28
+Script finalizado com sucesso
+
+2026-01-08 18:01:04 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"parent","nome_completo":"isla","email":"isla@gmail.com","password":"isla","localizacao":""}
+Data decoded: Array
+(
+    [role] => parent
+    [nome_completo] => isla
+    [email] => isla@gmail.com
+    [password] => isla
+    [localizacao] => 
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 29
+Script finalizado com sucesso
+
+2026-01-08 18:03:03 - Script iniciado
+Método: POST
+Método POST aceito
+Caminho DB: C:\xampp\htdocs\babyhappy_v1\api\auth/../../backend/config/database.php
+Caminho real: C:\xampp\htdocs\babyhappy_v1\backend\config\database.php
+Arquivo existe? SIM
+database.php carregado
+Conexão BD OK
+Input raw: {"role":"babysitter","nome_completo":"Carlos","email":"carlos@gmail.com","password":"carlos","localizacao":"Porto"}
+Data decoded: Array
+(
+    [role] => babysitter
+    [nome_completo] => Carlos
+    [email] => carlos@gmail.com
+    [password] => carlos
+    [localizacao] => Porto
+)
+
+Validação OK
+Email disponível
+INSERT OK - ID: 30
+Script finalizado com sucesso
+

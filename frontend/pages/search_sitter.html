@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BabyHappy - Encontrar Babysitter</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/search_sitter.css">
+    
+    <style>
+        @keyframes babyBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-35px) scale(1.1); }
+        }
+        #success-overlay {
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(255, 255, 255, 0.98); 
+            z-index: 99999; 
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column; 
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-header">
+        <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="header-search-input" placeholder="Pesquisar por localização ou nome" class="search-input">
+        </div>
+    </div>
+
+    <div class="search-results-container p-4 max-w-6xl mx-auto">
+        <h1 class="text-3xl font-extrabold mb-6 text-center" style="color:#3b76b2;">
+            Encontre o Babysitter Perfeito
+        </h1>
+
+        <div id="booking-feedback-message" style="display:none;"></div>
+
+        <div class="filter-panel">
+            <h3>🔍 Filtros Avançados</h3>
+            <form id="filter-form" class="space-y-4">
+                <div class="filter-grid">
+                    <div class="filter-group">
+                        <label for="query">Pesquisar por Nome ou Localização:</label>
+                        <input type="text" id="query" name="query" placeholder="Ex: João, Porto...">
+                    </div>
+                    <div class="filter-group">
+                        <label for="proximidade">Proximidade:</label>
+                        <select id="proximidade" name="proximidade">
+                            <option value="">Todas as Proximidades</option>
+                            <option value="Muito Próximo">Muito Próximo</option>
+                            <option value="Próximo">Próximo</option>
+                            <option value="Moderado">Moderado</option>
+                            <option value="Longe">Longe</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="disponibilidade">Disponibilidade</label>
+                        <select id="disponibilidade" name="disponibilidade">
+                            <option value="">Toda a Disponibilidade</option>
+                            <option value="Disponível">Disponível</option>
+                            <option value="Indisponível">Indisponível</option>
+                            <option value="Feriados">Feriados</option>
+                            <option value="Weekends">Weekends</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="experiencia">Experiência:</label>
+                        <select id="experiencia" name="experiencia">
+                            <option value="">Todas as Experiências</option>
+                            <option value="Básica">Básica</option>
+                            <option value="Intermediária">Intermediária</option>
+                            <option value="Avançada">Avançada</option>
+                            <option value="Especialista">Especialista</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button type="submit" class="filter-btn filter-btn-apply">✓ Aplicar Filtros</button>
+                    <button type="button" id="clear-filters-btn" class="filter-btn filter-btn-clear">⟲ Limpar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="search-results-output">
+            <p id="sitter-count-message" class="text-gray-600 mb-6 text-center">A carregar...</p>
+            <div id="sitters-grid" class="sitter-cards-grid"></div>
+        </div>
+    </div>
+
+    <div id="booking-modal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <h2 class="text-xl font-extrabold mb-4 text-gray-800">
+                Solicitar Reserva para <span id="sitter-name-display" class="text-blue-600"></span>
+            </h2>
+            <form id="booking-form">
+                <input type="hidden" name="sitter_id" id="modal-sitter-id" value="">
+                <input type="hidden" id="modal-hourly-rate-hidden" value="">
+                <div class="space-y-4">
+                    <div class="form-group">
+                        <label for="data_inicio">Início da Reserva:</label>
+                        <input type="datetime-local" id="data_inicio" name="data_inicio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="data_fim">Fim da Reserva:</label>
+                        <input type="datetime-local" id="data_fim" name="data_fim" required>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-lg text-sm text-gray-700">
+                        <p>Preço/Hora: <span id="modal-hourly-rate" class="font-bold">0,00 €</span></p>
+                        <p>Custo Total Estimado: <span id="modal-total-cost" class="font-bold text-green-600">0,00 €</span></p>
+                    </div>
+                    <div class="pt-4 flex justify-between space-x-2">
+                        <button type="button" id="close-modal-btn" class="button-secondary flex-1">Cancelar</button>
+                        <button type="submit" id="modal-submit-btn" class="button-primary flex-1">Solicitar Reserva</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="bottom-menu" id="bottom-menu">
+        <a href="../pages/search_sitter.html" class="nav-link"><span>🏠</span>Pesquisa</a>
+        <a href="../pages/parent_bookings.html" class="nav-link"><span>📅</span>Reservas</a>
+        <a href="../pages/payments_view.html" class="nav-link"><span>💳</span>Pagamentos</a>
+        <a href="../pages/chat_dashboard.html" class="nav-link"><span>💬</span>Chat</a>
+        <a href="../pages/profile_edit.html" class="nav-link"><span>👤</span>Perfil</a>
+        <a href="#" id="logout-link" class="logout-btn"><span>➡️</span>Sair</a>
+    </div>
+
+    <div id="success-overlay">
+        <div style="font-size: 100px; animation: babyBounce 1s infinite ease-in-out; display: inline-block; margin-bottom: 20px;">👶</div>
+        <h2 id="overlay-message" style="color: #3b76b2; font-size: 24px; font-weight: bold; font-family: sans-serif;"></h2>
+        <p style="color: #666; margin-top: 10px;">O pedido foi enviado com sucesso!</p>
+        <button id="overlay-close-btn" style="margin-top:20px; padding:10px 30px; border-radius:20px; border:none; background:#3b76b2; color:white; cursor:pointer; font-weight:bold;">Fechar</button>
+    </div>
+
+    <script src="../assets/js/logout.js"></script>
+    <script src="../assets/js/search_sitter.js"></script>
+</body>
+
+</html>

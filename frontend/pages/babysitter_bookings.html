@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Reservas - Babysitter</title>
+    <link rel="stylesheet" href="../assets/css/babysitter_bookings.css">
+    <link rel="stylesheet" href="../assets/css/style.css">  
+</head>
+<body>
+    
+     <div class="dashboard-header">
+        <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+        
+        <h3 id="welcome-message-display">Bem-vindo(a), A carregar...</h3>
+    </div> 
+
+    <div class="main-content-container">
+    <h2>Minhas Reservas</h2>
+    
+    <div id="feedback-message" style="display:none; padding: 10px; margin-bottom: 10px; border-radius: 5px;"></div>
+    <div id="loading-message" style="display:none;">A carregar reservas...</div>
+    <div class = "no-bookings" id="no-bookings" style="display:none;">Não tem reservas pendentes no momento.</div>
+
+    <div class="reservas-container" id="reservas-list">
+        </div>
+</div>
+<div class="bottom-menu" id="bottom-menu">
+        <a href="../pages/babysitter_bookings.html" class="nav-link active-section" data-section="reservas"><span>📅</span>Reservas</a>
+        <a href="../pages/chat_babysitter.html" class="nav-link" data-section="chat"><span>💬</span>Chat<span id="chat-notification-dot"></span></a>
+        <a href="../pages/babysitter_payments.html" class="nav-link" data-section="pagamentos"><span>💳</span>Pagamentos</a>
+        <a href="../pages/babysitter_ratings.html" class="nav-link" data-section="ratings"><span>⭐</span>Avaliações</a>
+        <a href="../pages/babysitter_profile_edit.html" class="nav-link" data-section="perfil"><span>👤</span>Perfil</a>
+        
+        <a href="#" id="logout-link" class="logout-btn"><span>➡️</span>Sair</a>
+    </div>
+    <script src="../assets/js/logout.js"></script>
+    <script src="../assets/js/babysitter_bookings.js"></script> 
+</body>
+</html>

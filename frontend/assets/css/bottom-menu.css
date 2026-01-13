@@ -1,0 +1,83 @@
+/* ../assets/css/bottom-menu.css - Estilos para a Barra de Navegação Inferior */
+
+/* --- 1. Layout Principal da Barra --- */
+.bottom-menu {
+    /* Fixo no fundo, ocupa toda a largura */
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    
+    /* Estilo e Fundo */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0; /* Padding vertical para dar altura */
+    background-color: #ffffff; 
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1); /* Sombra no topo */
+    z-index: 1000; /* Garante que fica por cima de outros elementos */
+    height: 60px; /* Altura fixa para o cálculo no chat.css */
+}
+
+/* --- 2. Estilo dos Links (Itens) --- */
+.bottom-menu .nav-link,
+.bottom-menu .logout-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1; /* Distribui o espaço igualmente */
+    font-size: 0.75em;
+    color: #666; 
+    transition: color 0.2s;
+    padding: 0 5px; /* Padding horizontal interno */
+}
+
+/* Ícones (Os spans que contêm os emojis ou ícones) */
+.bottom-menu span {
+    font-size: 1.5em; /* Tamanho dos Ícones */
+    margin-bottom: 3px;
+    line-height: 1;
+}
+
+/* --- 3. Estados Ativo e Hover --- */
+
+/* Estilo para a secção ativa (Usado a cor Azul da Babysitter - #4a8cc7) */
+.bottom-menu .nav-link.active-section {
+    color: #4a8cc7; 
+}
+
+.bottom-menu .nav-link:hover,
+.bottom-menu .logout-btn:hover {
+    color: #4a8cc7;
+}
+
+/* Estilo para o botão de Sair/Logout */
+.bottom-menu .logout-btn {
+    color: #ff5722; /* Cor de alerta/saída */
+}
+
+/* --- 4. Notificação de Chat --- */
+#chat-notification-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    display: none; /* Escondido por padrão, mostrado pelo JS quando há mensagens não lidas */
+}
+
+.bottom-menu a[data-section="chat"] {
+    position: relative; /* Para posicionar o ponto de notificação */
+}
+
+/* --- 5. Ocultar em Desktop --- */
+/* Esta barra é específica para mobile, pode ser ocultada em ecrãs grandes */
+@media (min-width: 768px) {
+    .bottom-menu {
+        display: none; 
+    }
+    /* ✅ IMPORTANTE: Em desktop, o footer ou barra de topo deve ser visível aqui */
+}

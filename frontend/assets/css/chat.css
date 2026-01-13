@@ -1,0 +1,401 @@
+/* ../assets/css/chat.css - Ficheiro de Estilos do Chat (Versão Final para Scroll Mobile) */
+
+/* --- 1. Reset Básico --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f9;
+    min-height: 100vh; 
+}
+
+html {
+    height: 100%;
+}
+
+/* --- 2. Layout Principal (Chat Container) --- */
+.chat-container {
+    display: flex;
+    max-width: 1200px; /* Limite de largura para desktop */
+    
+    /* Configuração Padrão para Desktop */
+    height: 90vh; 
+    margin: 20px auto; /* Centralizado e com margem em desktop */
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    overflow: hidden; 
+}
+
+/* --- 3. Lista de Conversas (Side Panel) --- */
+.conversation-list {
+    flex: 0 0 350px; 
+    border-right: 1px solid #eee;
+    overflow-y: auto;
+    padding: 15px 0;
+    background-color: #f9f9f9;
+}
+
+.conversation-list h3 {
+    padding: 0 15px 15px 15px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+#partner-status {
+    display: block;
+    margin-top: 2px;
+}
+
+.status-online {
+    color: #2ecc71; /* Verde esmeralda */
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Pequena bolinha verde com efeito de pulsação */
+.status-online::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.5);
+    animation: pulse-green 2s infinite;
+}
+
+.status-offline {
+    color: #95a5a6; /* Cinza suave */
+    font-size: 0.82rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Animação para a bolinha Online */
+@keyframes pulse-green {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Ajuste no cabeçalho do chat para alinhar o nome e o status */
+.chat-header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#partner-name-display {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.conversation-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #f4f4f4;
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.conversation-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Assumindo a cor ativa da Babysitter (Azul) */
+.conversation-item.active-conv {
+    background-color: #e0f0ff; 
+    border-left: 5px solid #4a8cc7;
+}
+
+.conv-photo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.conversation-item small {
+    color: #777;
+    font-size: 0.85em;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+
+.unread-count {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ff5722;
+    color: white;
+    font-size: 0.75em;
+    padding: 3px 7px;
+    border-radius: 50%;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* --- 4. Janela de Chat (Chat Window) --- */
+.chat-window {
+    flex-grow: 1;
+    display: flex; 
+    flex-direction: column;
+}
+
+.chat-active-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Header do Chat (Apenas o nome do parceiro/status) */
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #fcfcfc;
+    flex-shrink: 0; /* Impede que o header encolha */
+}
+
+.chat-header span {
+    font-weight: bold;
+    color: #4a8cc7; /* Assumindo a cor Babysitter */
+    font-size: 1.1em;
+}
+
+.chat-header small {
+    color: #888;
+}
+
+#back-to-list-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #4a8cc7; /* Assumindo a cor Babysitter */
+    display: none; 
+}
+
+#delete-conversation-btn {
+    background: none;
+    border: none;
+    color: #ff5722;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-left: 15px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+#delete-conversation-btn:hover {
+    opacity: 1;
+}
+
+/* Área de Mensagens */
+.messages-area {
+    flex-grow: 1;
+    /* ✅ Padding uniforme para evitar scroll desnecessário */
+    padding: 20px; 
+    overflow-y: auto; /* Permite o scroll apenas nesta área */
+    background-color: #f9f9f9;
+    
+    /* Para mensagens */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    position: relative;
+    word-wrap: break-word;
+}
+
+/* Minhas Mensagens (Azul) */
+.my-message {
+    align-self: flex-end;
+    background-color: #4a8cc7;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+/* Mensagens do Parceiro (Cinza) */
+.partner-message {
+    align-self: flex-start;
+    background-color: #e2e2e2;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+.message-time {
+    display: block;
+    font-size: 0.7em;
+    margin-top: 5px;
+    text-align: right;
+    opacity: 0.8;
+}
+
+.partner-message .message-time {
+    color: #777;
+}
+
+.my-message .message-time {
+    color: #e0f0ff;
+}
+
+/* Botão de Excluir Mensagem */
+.delete-message-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.6em;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.my-message:hover .delete-message-btn {
+    opacity: 1;
+}
+
+/* Área de Input */
+.chat-input-area {
+    border-top: 1px solid #eee;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    flex-shrink: 0; 
+}
+
+.chat-input-area form {
+    display: flex;
+}
+
+.chat-input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.chat-input-area button {
+    background-color: #4a8cc7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.chat-input-area button:hover {
+    background-color: #3a75a8;
+}
+
+
+/* =======================================================
+   5. RESPONSIVIDADE (MOBILE) - Ajustes Críticos para SCROLL
+   ======================================================= */
+@media (max-width: 767px) {
+    
+    .chat-container {
+        /* Permite o scroll (position: relative) */
+        position: fixed; 
+        display: flex;
+        top: 15px;
+        height: calc(100vh - 200px); 
+        max-height: calc(100vh - 200px);
+        
+        /* As margens empurram o container para caber entre os menus */
+        margin: 110px auto 60px auto; 
+        
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        flex-direction: column;
+        z-index: 10;
+        /* IMPORTANTE: Garante que o container interno não tem scroll */
+        overflow: hidden; 
+    }
+    
+    /* Área de mensagens: É A ÚNICA QUE ROLA O CONTEÚDO DA CONVERSA */
+    .messages-area {
+        overflow-y: auto; 
+    }
+
+    /* O restante do código mobile permanece igual... */
+    
+    .conversation-list {
+        flex: 1 1 100%;
+        display: block; 
+        border-right: none;
+        height: 100%;
+    }
+
+    .chat-window {
+        flex: 1 1 100%;
+        position: absolute; 
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: #fff;
+        display: none; 
+    }
+    
+    .chat-header #back-to-list-btn {
+        display: block; 
+    }
+
+    .conversation-item {
+        padding: 12px;
+    }
+    
+    .conv-photo img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .conversation-item small {
+        max-width: 180px;
+    }
+
+    .message {
+        max-width: 85%;
+    }
+}

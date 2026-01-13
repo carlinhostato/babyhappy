@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Dashboard | BabyHappy</title>
+    <link rel="stylesheet" href="../assets/css/parent_dashboard.css"> 
+</head>
+<body id="dashboard-body">
+
+<div class="dashboard-header">
+    <img src="../assets/images/babyhappylogo.png" alt="BabyHappy Logo" class="logo-img">
+    
+    <div class="search-container">
+        <form id="search-form" class="search-form">
+            <span class="search-icon">🔍</span> 
+            <input type="text" name="query" placeholder="Search by location or name" class="search-input">
+        </form>
+    </div>
+</div>
+
+<div class="main-content">
+    <div id="section-loading" style="text-align: center; padding-top: 150px;">
+        A carregar dashboard...
+    </div>
+
+    <div id="section-perfil" class="dashboard-section" style="display:none;">
+        <h1>Editar Perfil</h1>
+        <p id="profile-message" class="message"></p>
+        
+        <form id="profile-form" action="javascript:void(0);" enctype="multipart/form-data">
+            <div id="profile-details">
+                </div>
+            
+            <hr>
+            <p style="text-align: center;">🔒Alterar Password</p>
+
+            <div class="form-group">
+                <label for="password">Nova Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm_password">Confirmar Nova Password</label>
+                <input type="password" id="confirm_password" name="confirm_password">
+            </div>
+
+            <button type="submit" class="btn-submit">Guardar Alterações</button>
+        </form>
+    </div>
+    
+    <div id="section-pesquisa" class="dashboard-section" style="display:none;">
+        </div>
+
+</div>
+
+<div class="bottom-menu" id="bottom-menu">
+    <a href="../pages/search_sitter.html" class="nav-link" data-section="pesquisa"><span>🏠</span>Pesquisa</a>
+    <a href="../pages/parent_bookings.html" class="nav-link" data-section="reservas"><span>📅</span>Reservas</a>
+    <a href="../pages/payments_view.html" class="nav-link" data-section="pagamentos"><span>💳</span>Pagamentos</a>
+    <a href="../pages/chat_dashboard.html" class="nav-link" data-section="chat"><span>💬</span>Chat<span id="chat-notification-dot"></span></a>
+    <a href="../pages/profile_edit.html" class="nav-link" data-section="perfil"><span>👤</span>Perfil</a>
+    
+    <a href="#" id="logout-link" class="logout-btn"><span>➡️</span>Sair</a>
+</div>
+<script src="../assets/js/logout.js"></script>
+<script src="../js/parent_dashboard.js"></script>
+</body>
+</html>
