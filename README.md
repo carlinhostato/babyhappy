@@ -1,76 +1,96 @@
 # BABYHAPPY_V1
-VERSÃO 1.0.0
 
-👶 BabyHappy (v1.0) O BabyHappy é uma plataforma desenvolvida para ligar pais e babysitters de forma eficiente e segura. Esta primeira versão foca-se na comunicação direta e na transparência de atividade dos utilizadores através de um sistema de chat robusto.
+**Version 1.0.0**
 
------------------------------------------------------------------------------------------------------
+## 👶 BabyHappy (v1.0)
 
-🚀 Funcionalidades Principais Autenticação de Utilizadores: Perfis distintos para Pais e Babysitters.
+BabyHappy is a platform designed to connect parents and babysitters in an efficient and secure way. This first version focuses on direct communication and user activity transparency through a robust chat system.
 
-Chat em Tempo Real:
+---
 
-- Troca de mensagens assíncronas (sem recarregar a página).
+## 🚀 Main Features
 
-- Gestão de histórico e conversas ativas.
+### User Authentication
 
-- Possibilidade de apagar mensagens individuais e conversas completas
+* Distinct profiles for Parents and Babysitters.
 
+### Real-Time Chat
 
-Sistema de Presença (Heartbeat):
+* Asynchronous message exchange (without page reloads).
+* Conversation and chat history management.
+* Ability to delete individual messages and entire conversations.
 
-- Status Online: Indicador visual pulsante quando o utilizador está ativo.
+### Presence System (Heartbeat)
 
-- Última Atividade: Registo de "Visto por último" para utilizadores offline.
+* **Online Status:** Visual pulsing indicator when a user is active.
+* **Last Activity:** "Last seen" tracking for offline users.
 
-- Edição de Perfil: Upload de foto de perfil e gestão de dados profissionais (preço/hora, experiência, localização).
+### Profile Management
 
-------------------------------------------------------------------------------------------------------
+* Profile picture upload.
+* Professional information management, including:
 
-🛠️ Tecnologias Utilizadas
+  * Hourly rate
+  * Experience
+  * Location
 
-Frontend: HTML5, CSS3 (Design Responsivo), JavaScript (Vanilla JS).
+---
 
-Backend: PHP 8.x.
+## 🛠️ Technologies Used
 
-Base de Dados: MySQL.
+### Frontend
 
-Comunicação: Fetch API / AJAX para interações em tempo real.
+* HTML5
+* CSS3 (Responsive Design)
+* JavaScript (Vanilla JS)
 
-------------------------------------------------------------------------------------------------------
+### Backend
 
-⚙️ Configuração Local
+* PHP 8.x
 
-- Clonar o repositório:
+### Database
 
-Bash
+* MySQL
 
+### Communication
+
+* Fetch API / AJAX for real-time interactions
+
+---
+
+## ⚙️ Local Setup
+
+### Clone the Repository
+
+```bash
 git clone https://github.com/carlinhostato/BABYHAPPY_V1.git
+```
 
-------------------------------------------------------------------------------------------------------
+---
 
-Preparar o Ambiente:
+### Prepare the Environment
 
-- Mover a pasta para o diretório do seu servidor local (ex: htdocs no XAMPP).
+* Move the project folder to your local server directory (e.g., `htdocs` in XAMPP).
+* Import the provided SQL database file.
 
-- Importar o ficheiro SQL da base de dados fornecido.
+---
 
+### Configure the Database
 
-------------------------------------------------------------------------------------------------------
+* Edit the `backend/config/database.php` file with your local database credentials.
 
-Configurar a Base de Dados:
+---
 
-- Editar o ficheiro backend/config/database.php com as suas credenciais locais.
+### Access the Application
 
+Open the following URL in your browser:
 
-------------------------------------------------------------------------------------------------------
+```
+http://localhost/babyhappy_v1/login.html
+```
 
-Aceder:
+---
 
-- Abrir http://localhost/babyhappy_v1/login.html no navegador.
+## 📄 License
 
-
-------------------------------------------------------------------------------------------------------
-
-📄 Licença
-
-- Este projeto tem fins exclusivamente educativos.
+This project is intended exclusively for educational purposes.
